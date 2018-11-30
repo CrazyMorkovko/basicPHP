@@ -17,7 +17,7 @@ foreach ($arr as $key => $value) {
         $menu .= "<ul class='menu menu--sub'>";
         foreach ($value as $subKey => $subValue) {
             $menu .=
-                "<li class='menu--sub__list-item'><a class='menu--sub__item'>$subValue</a></li>";
+                "<li class='menu__list-item--sub'><a class='menu__item--sub'>$subValue</a></li>";
         }
         $menu .= "</ul></li>";
     } else {
