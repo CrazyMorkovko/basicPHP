@@ -10,17 +10,18 @@ $arr = [
     "Контакты"
 ];
 
-$menu = "<ul>";
+$menu = "<ul class='menu'>";
 foreach ($arr as $key => $value) {
     if (is_array($value)) {
-        $menu .= "<li><a>" .$key. "</a>";
-        $menu .= "<ul>";
+        $menu .= "<li class='menu__list-item'><a class='menu__item'>" .$key. "</a>";
+        $menu .= "<ul class='menu menu--sub'>";
         foreach ($value as $subKey => $subValue) {
-            $menu .= "<li><a>$subValue</a></li>";
+            $menu .=
+                "<li class='menu--sub__list-item'><a class='menu--sub__item'>$subValue</a></li>";
         }
         $menu .= "</ul></li>";
     } else {
-        $menu .= "<li><a>" . $value . "</a></li>";
+        $menu .= "<li class='menu__list-item'><a class='menu__item'>" . $value . "</a></li>";
     }
 }
 $menu .= "</ul>";
