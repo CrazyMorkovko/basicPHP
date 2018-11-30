@@ -12,20 +12,16 @@ $arr = [
 
 $menu = "<ul>";
 foreach ($arr as $key => $value) {
-    $menu .= "<li><a>";
-
     if (is_array($value)) {
-        $menu .= $key;
+        $menu .= "<li><a>" .$key. "</a>";
         $menu .= "<ul>";
         foreach ($value as $subKey => $subValue) {
             $menu .= "<li><a>$subValue</a></li>";
         }
-        $menu .= "</ul>";
+        $menu .= "</ul></li>";
     } else {
-        $menu .= $value;
+        $menu .= "<li><a>" . $value . "</a></li>";
     }
-
-    $menu .= "</a></li>";
 }
 $menu .= "</ul>";
 
