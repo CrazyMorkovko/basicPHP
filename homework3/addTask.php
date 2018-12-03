@@ -4,11 +4,7 @@ for ($i = 0; $i < 10; $i++) {
         if ($i === 0) {
             echo "$j ";
         } else {
-            if ($j === 0) {
-                echo "$i ";
-            } else {
-                echo $i * $j . " ";
-            }
+            echo $j === 0 ? "$i " : $i * $j . " ";
         }
     }
     echo "\n";

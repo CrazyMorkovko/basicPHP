@@ -1,5 +1,4 @@
 <?php
-
 $arr = scandir('images/max');
 
 $arr = array_filter($arr, function ($string) {
