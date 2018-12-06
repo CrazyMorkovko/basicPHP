@@ -29,6 +29,7 @@ CREATE TABLE `gallery` (
   `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `size` int(11) NOT NULL,
   `name` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +40,7 @@ CREATE TABLE `gallery` (
 
 LOCK TABLES `gallery` WRITE;
 /*!40000 ALTER TABLE `gallery` DISABLE KEYS */;
-INSERT INTO `gallery` VALUES (1,'1.jpg',662,'Картинка1'),(2,'2.jpg',26,'Картинка2'),(3,'3.jpg',58,'Картинка3'),(4,'4.jpg',21,'Картинка4');
+INSERT INTO `gallery` VALUES (1,'1.jpg',662,'Image1',5),(2,'2.jpg',26,'Image2',4),(3,'3.jpg',58,'Image3',1),(4,'4.jpg',21,'Image4',1);
 /*!40000 ALTER TABLE `gallery` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-06 19:56:17
+-- Dump completed on 2018-12-06 21:55:12
