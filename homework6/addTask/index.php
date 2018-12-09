@@ -11,7 +11,7 @@ $mimeTypes = [
     "image/svg+xml",
 ];
 
-if (isset($_POST['upload'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['img']) && $_FILES['img']['name'][0]) {
         for ($i = 0; $i < count($_FILES['img']); $i++) {
             $name = $_FILES['img']['name'][$i];
