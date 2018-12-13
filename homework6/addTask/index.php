@@ -1,7 +1,6 @@
 <?php
 require_once('./config.php');
 $connection = mysqli_connect($config['host'], $config['user'], $config['password'], $config['database']);
-$result = mysqli_query($connection, 'SELECT * FROM gallery ORDER BY count DESC');
 
 $mimeTypes = [
     "image/gif",
@@ -23,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 mysqli_query($connection,
                     "INSERT INTO gallery (url, size, name) VALUES ('$name', '$size', '$name')");
                 header('Location: /homework6/addTask/index.php');
+                exit;
             } else {
                 echo "Неверный тип файла($name) или размер файла превышает 5 Мб <br>";
             }
@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'Выберите файлы!';
     }
 }
+
+$result = mysqli_query($connection, 'SELECT * FROM gallery ORDER BY count DESC');
 
 $arr = [];
 
